@@ -1,7 +1,7 @@
 programa
 {
 	
-inteiro array[5] = {3, 5, 2, 4, 1}
+	inteiro array[5] = {3, 5, 2, 4, 1}
 	inteiro _
 	inteiro cont = 0
 	funcao inicio()
@@ -26,3 +26,4 @@ inteiro array[5] = {3, 5, 2, 4, 1}
 		}
 		
 	}
+}
