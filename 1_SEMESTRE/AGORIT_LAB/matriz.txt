@@ -22,38 +22,38 @@ programa
 			{
 				escreva("( ", paises[0][i], " )", " - ", paises[1][i], "\n")
 			}
-		    leia(opcao)
+		        leia(opcao)
 			limpa()
 			escreva("Opção escolhida:", opcao, "\n")
 			escolha(opcao)
-		    {
+		        {
 			    caso 1: para (inteiro i = 0; i < 4; i++)
 			            { 
-				            escreva(paises[i][0], "-")
+				        escreva(paises[i][0], "-")
 			            }
 					pare
 			    caso 2: para (inteiro i = 0; i < 4; i++)
 			            {
-			        	    escreva(paises[i][1], "-")
+			        	escreva(paises[i][1], "-")
 			            }
 					pare
 			    caso 3: para (inteiro i = 0; i < 4; i++)
 			            {
-			        	    escreva(paises[i][2], "-")
+			        	escreva(paises[i][2], "-")
 			            }
 					pare
 			    caso 4: para (inteiro i = 0; i < 4; i++)
 			            {
-			        	    escreva(paises[i][3], "-")
+			        	escreva(paises[i][3], "-")
 			            }
 					pare
-				caso 5: para (inteiro i = 0; i < 4; i++)
-				        {
-				        	escreva(paises[i][4], "-")
-				        }
+			    caso 5: para (inteiro i = 0; i < 4; i++)
+				    {
+				        escreva(paises[i][4], "-")
+				    }
 					pare
 			    caso contrario: escreva("Essa opção é inválida!")
-		    }
+		        }
 			escreva("\n")
 			escreva("Deseja continuar (s/n)")
 			leia(continuar)
