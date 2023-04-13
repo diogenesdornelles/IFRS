@@ -10,8 +10,8 @@ while not(a != b != c):
     c = int(input("Informe 3º número: "))
 
 if a > b:
-    major: int = a
-    minor: int = b
+    major = a
+    minor = b
 else:
     major = b
     minor = a
