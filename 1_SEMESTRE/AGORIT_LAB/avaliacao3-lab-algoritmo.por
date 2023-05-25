@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro numero = 0, chute = 1, tentativa = 0, total
+		inteiro numero = 0, chute = 1, tentativa = 0
 		logico acertou = falso
 		escreva("Amigo 'A' vai pensar em um número \n")
 		faca
