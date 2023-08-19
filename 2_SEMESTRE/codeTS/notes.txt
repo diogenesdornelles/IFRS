@@ -1,0 +1,64 @@
+# iniciando o projeto
+
+npm init -y
+
+git init
+
+# instalando o typescript (dev dependencies)
+
+npm i typescript -D
+
+npx tsc index.ts (Cria o arquivo de produção .js. Arquivo .ts é somente de dev. Ou seja, há a compilação do código)
+
+Nota: se estivermos em modo script, devemos exportar a função/variável para entrarmos no module mode e evitar conflitos
+
+# Instalar o ts-node e code runner
+
+npm i ts-node -D
+
+# criar pasta .vscode. Nela, setar key "code-runner.executorMap"
+{
+    "code-runner.executorMap": {
+        "typescript": "npx ts-node --files --transpile-only",
+    }
+}
+
+# configurar o lint
+
+npm i eslint -D
+
+npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser -D (fazer a integração entre eslint e typescript)
+
+# criar .eslintrc.js (copiar código em https://github.com/luizomf/cursojstypescript/blob/master/.eslintrc.js)
+
+# configurar o prettier
+
+npm i prettier eslint-config-prettier eslint-plugin-prettier -D
+
+# colar .prettierrc.js
+
+# iniciar o projeto ts
+
+npx tsc --init
+
+# Após configurações, npx tsc para compilar o código em JS.
+
+# Instalar o webpack
+
+npm i ts-loader webpack webpack-cli -D
+
+# configurar o webpack.config.js
+
+npx webpack -w
+
+# instalar tailwind
+
+npm install -D tailwindcss
+
+npx tailwindcss init
+
+tailwindcss -i ./src/input.css -o ./frontend/assets/css/output.css --watch && webpack -w
+
+# instalar e criar o .editorconfig
+
+# start live server
