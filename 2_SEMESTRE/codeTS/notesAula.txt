@@ -1,0 +1,9 @@
+Verifica se há node: node -v
+
+instalar o typescript: npm install -g typescript
+
+checar: tsc -v
+
+compilar o código: npx tsc index.ts
+
+Executar js: node index.js
