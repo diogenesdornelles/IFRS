@@ -1,6 +1,6 @@
 Verifica se há node: node -v
 
-instalar o typescript: npm install -g typescript
+instalar o typescript: npm install --D typescript
 
 checar: tsc -v
 

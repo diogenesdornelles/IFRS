@@ -1,3 +1,4 @@
+// exercícios da página 34 e 35 da Apostila da K19
 // Client.ts
 export class Cliente {
   constructor(
@@ -11,6 +12,7 @@ export class CartaoDeCredito {
   constructor(
     public dataDeValidade: string,
     public numero: number,
+    public cliente: Cliente,
   ) {}
 }
 
@@ -24,15 +26,7 @@ export class Conta {
   constructor(
     public numero: number,
     public saldo: number,
-    public limite: number,
-  ) {}
-}
-
-// ContaAlterada.ts
-export class ContaAlterada {
-  constructor(
-    public numero: number,
-    public saldo: number,
+    public agencia: Agencia,
     public limite: number = 100,
   ) {}
 }

@@ -1,0 +1,20 @@
+	ORG 10
+loop:	LDA X
+    STA MAIOR
+    LDA MAIOR
+    SUB Y
+    JN Ymaior
+    JMP NEXT
+Ymaior:	LDA Y
+	STA MAIOR
+NEXT: LDA MAIOR
+    SUB Z
+    JN Zmaior
+    JMP fim
+Zmaior:	LDA Z
+    STA MAIOR
+fim:	HLT
+X	DEF BYTE=20
+Y	DEF BYTE=30
+Z   DEF BYTE=10
+MAIOR DEF BYTE=0
