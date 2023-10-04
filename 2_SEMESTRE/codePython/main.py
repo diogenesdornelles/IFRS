@@ -19,7 +19,7 @@ if __name__ == '__main__':
     ]
     my_matrix = SquareMatrix(MATRIX_EX_1, SOLUTION_EX_1)
     try:
-        print(my_matrix.get_solution(MIN_APPROACH_EX_1, APPROACHES_EX_1, 
+        print(my_matrix.get_solution(MIN_APPROACH_EX_1, APPROACHES_EX_1,
                                      Method.GAUSS_JACOBI))
     except ConvergenceError as error:
         print('Exercise 01')
@@ -134,11 +134,11 @@ if __name__ == '__main__':
         print(my_matrix.get_solution(MIN_APPROACH_EX_5, APPROACHES_EX_5,
                                      Method.GAUSS_JACOBI))
         print('Exercise 05 - Gauss-Seidel')
-        print(my_matrix.get_solution(MIN_APPROACH_EX_5, APPROACHES_EX_5, 
+        print(my_matrix.get_solution(MIN_APPROACH_EX_5, APPROACHES_EX_5,
                                      Method.GAUSS_SEIDEL))
     except ConvergenceError as error:
         print('Exercise 05 - Gauss-Jacobi')
-        print('The supplied matrix does not converge to a specific value', 
+        print('The supplied matrix does not converge to a specific value',
               error)
 
     # Exercise 06
