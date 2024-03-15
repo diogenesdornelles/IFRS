@@ -1,0 +1,3 @@
+instalação ts-jest
+
+https://www.npmjs.com/package/ts-jest

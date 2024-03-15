@@ -44,7 +44,7 @@ namespace ContaTipo {
   }
 }
 
-namespace Gerador {
+namespace Geradores {
   export class Extrato {
     public static geraExtrato(conta: Interfaces.IConta): void {
       console.log('EXTRATO');
@@ -59,12 +59,12 @@ namespace Testador {
     const cp = new ContaTipo.Poupanca(500);
     cc.deposita(500);
     cp.deposita(500);
-    Gerador.Extrato.geraExtrato(cc);
-    Gerador.Extrato.geraExtrato(cp);
+    Geradores.Extrato.geraExtrato(cc);
+    Geradores.Extrato.geraExtrato(cp);
     cc.saca(100);
     cp.saca(100);
-    Gerador.Extrato.geraExtrato(cc);
-    Gerador.Extrato.geraExtrato(cp);
+    Geradores.Extrato.geraExtrato(cc);
+    Geradores.Extrato.geraExtrato(cp);
   }
 }
 
