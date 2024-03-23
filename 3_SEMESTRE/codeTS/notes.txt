@@ -23,19 +23,18 @@ npm i ts-node -D
     }
 }
 
-# configurar o lint
+# configurar o eslint
 
-npm i eslint -D
-
-npm i @typescript-eslint/eslint-plugin @typescript-eslint/parser -D (fazer a integração entre eslint e typescript)
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin (fazer a integração entre eslint e typescript)
 
 # criar .eslintrc.js (copiar código em https://github.com/luizomf/cursojstypescript/blob/master/.eslintrc.js)
 
 # configurar o prettier
+// https://khalilstemmler.com/blogs/tooling/prettier/
 
 npm i prettier eslint-config-prettier eslint-plugin-prettier -D
 
-# colar .prettierrc.js
+# colar .prettierrc
 
 # iniciar o projeto ts
 
