@@ -1,0 +1,30 @@
+CREATE SCHEMA IF NOT EXISTS escoladb2;
+
+USE escoladb2;
+
+CREATE TABLE `EscolaDB2`.`Professores` (
+    `Siape` VARCHAR(20) NOT NULL,
+    `Nome` VARCHAR(150) NOT NULL,
+    `DataNasc` DATE NOT NULL,
+    `Area` VARCHAR(200) NOT NULL,
+    `Email` VARCHAR(250) NOT NULL,
+    PRIMARY KEY (`Siape`)
+)  ENGINE=INNODB;
+
+
+CREATE TABLE `EscolaDB2`.`Alunos` (
+    `Matricula` INT NOT NULL AUTO_INCREMENT,
+    `Nome` VARCHAR(150) NOT NULL,
+    `DataNasc` DATE NOT NULL,
+    `CPF` VARCHAR(15) NOT NULL,
+    `Email` VARCHAR(250) NOT NULL,
+    PRIMARY KEY (`Matricula`)
+)  ENGINE=INNODB;
+
+
+CREATE TABLE `EscolaDB2`.`Turmas` (
+    `Id` INT NOT NULL AUTO_INCREMENT,
+    `Turma` VARCHAR(100) NOT NULL,
+    `Ano` VARCHAR(4) NOT NULL,
+    PRIMARY KEY (`Id`)
+)  ENGINE=INNODB;
