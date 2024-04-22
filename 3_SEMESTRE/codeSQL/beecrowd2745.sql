@@ -1,0 +1,1 @@
+SELECT p.name, ROUND((p.salary * 0.1), 2) FROM people as p WHERE p.salary > 3000;
