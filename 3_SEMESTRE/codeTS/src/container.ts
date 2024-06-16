@@ -1,10 +1,15 @@
 /**
- * Primeiramente, 
- * 
+ *   Primeiramente, no objetivo de reduzir a redundância de código, foram declarados junto ao 
+ * container genérico (Container) os atributos e alguns métodos comuns que serão extendidos
+ * à pilha e à fila, pois estas necessitam da manipulação de mesmos estados e comportamentos;
+ *   Relegou-se às classes filhas concretas a implementação de outros métodos abstratos, cujo modo de 
+ * funcionamento é particular a cada qual;
+ *   Houve a implementação de generics para lidar com elementos manipulados pelos containers; e
+ *   Foi adicionado documentação e comentário para melhorar a legibilidade.
  */
 /**
  * Classe abstrata que representa um contêiner genérico.
- * @template T O tipo dos elementos no contêiner.
+ * @template T O tipo genérico dos elementos no contêiner.
  */
 export abstract class Container<T> {
   protected _elementos: Array<T>; // Array para armazenar os elementos
@@ -37,7 +42,7 @@ export abstract class Container<T> {
 
   /**
    * Adiciona um elemento ao contêiner.
-   * @param elemento O elemento a ser adicionado ao contêiner.
+   * @param elemento O elemento a ser adicionado ao contêiner, do tipo genérico T.
    * @returns Verdadeiro se o elemento foi adicionado com sucesso, falso caso contrário.
    */
   public adicionar(elemento: T): boolean {

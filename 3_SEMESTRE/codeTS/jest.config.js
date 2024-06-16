@@ -2,5 +2,5 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  // testMatch: ['codeTS/src/**/*.test.js'],
+  roots: ['src/linkedList'],
 };
