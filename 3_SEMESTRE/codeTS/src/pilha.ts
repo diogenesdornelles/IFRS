@@ -1,11 +1,10 @@
-import { Container } from "./container";
+import { Container } from './container';
 
 /**
  * Classe que representa uma estrutura de dados de pilha.
  * @typeparam T Tipo dos elementos armazenados na pilha.
  */
 export class Pilha<T> extends Container<T> {
-
   /**
    * Construtor da classe Pilha.
    * Inicializa a pilha como vazia.
@@ -40,14 +39,14 @@ export class Pilha<T> extends Container<T> {
   }
 }
 
-let pilhaNumbers = new Pilha<number>()
-let pilhaStrings = new Pilha<string>()
+let pilhaNumbers = new Pilha<number>();
+let pilhaStrings = new Pilha<string>();
 
-pilhaNumbers.adicionar(1)
-pilhaStrings.adicionar('Joao')
+pilhaNumbers.adicionar(1);
+pilhaStrings.adicionar('Joao');
 
-console.log(pilhaNumbers.estaVazia())
-console.log(pilhaStrings.estaVazia())
+console.log(pilhaNumbers.estaVazia());
+console.log(pilhaStrings.estaVazia());
 
-console.log(pilhaNumbers.toString())
-console.log(pilhaStrings.toString())
+console.log(pilhaNumbers.toString());
+console.log(pilhaStrings.toString());

@@ -5,7 +5,7 @@ import { getRodada } from './getRodada';
 const jogadores = [new Jogador('Joao'), new Jogador('Ana'), new Jogador('Mario')];
 
 test('testa nome do jogador', () => {
-  let rodada = getRodada(3, jogadores);
+  const rodada = getRodada(3, jogadores);
   expect(rodada instanceof Array);
   for (let i = 0; i < rodada.length; i++) {
     expect(typeof rodada[i]).toBe('number');

@@ -33,7 +33,7 @@ export class Jogo {
 
   public getResultado(): Jogador {
     while (!this._jogadores[0].pilha.estavazia()) {
-      let rodada = getRodada(this._tamanhoRodada, this._jogadores);
+      const rodada = getRodada(this._tamanhoRodada, this._jogadores);
       this._acumulador += getSomaRodada(rodada);
       if (haIguais(rodada)) {
         continue;

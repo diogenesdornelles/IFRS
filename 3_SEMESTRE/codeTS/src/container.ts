@@ -1,8 +1,8 @@
 /**
- *   Primeiramente, no objetivo de reduzir a redundância de código, foram declarados junto ao 
+ *   Primeiramente, no objetivo de reduzir a redundância de código, foram declarados junto ao
  * container genérico (Container) os atributos e alguns métodos comuns que serão extendidos
  * à pilha e à fila, pois estas necessitam da manipulação de mesmos estados e comportamentos;
- *   Relegou-se às classes filhas concretas a implementação de outros métodos abstratos, cujo modo de 
+ *   Relegou-se às classes filhas concretas a implementação de outros métodos abstratos, cujo modo de
  * funcionamento é particular a cada qual;
  *   Houve a implementação de generics para lidar com elementos manipulados pelos containers; e
  *   Foi adicionado documentação e comentário para melhorar a legibilidade.

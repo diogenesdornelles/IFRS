@@ -145,22 +145,22 @@ export class LinkedList {
    * @memberof LinkedList
    */
   public addToEnd(data: NodeType): void {
-    let node = new Node(data);
+    const node = new Node(data);
     node.index = this._lenght;
     if (!this._header) {
       this.setHeader(node);
       return;
-    };
+    }
     let currentNode: Node | null = this._header;
     while (currentNode.next) {
       currentNode = currentNode.next;
-    };
+    }
     if (currentNode) {
       currentNode.next = node;
       this._lenght++;
-    };
+    }
     return;
-  };
+  }
   /**
    *
    *
@@ -169,15 +169,13 @@ export class LinkedList {
    * @memberof LinkedList
    */
 
-
-
   public addToStart(data: NodeType): void {
-    let node = new Node(data)
+    const node = new Node(data);
     if (!this._header) {
       this.setHeader(node);
       return;
     }
-    let oldHeader = this._header;
+    const oldHeader = this._header;
     oldHeader.index = 1;
     node.index = 0;
     node.next = oldHeader;
@@ -189,7 +187,7 @@ export class LinkedList {
     }
     this._lenght++;
     return;
-  };
+  }
 
   /**
    *
@@ -228,15 +226,15 @@ export class LinkedList {
         while (currentNode.next) {
           previousNode = currentNode;
           currentNode = currentNode.next;
-        };
+        }
         if (previousNode) {
           previousNode.next = null;
           this._lenght--;
-        };
+        }
       }
     }
     return;
-  };
+  }
   /**
    *
    *
@@ -247,12 +245,12 @@ export class LinkedList {
     if (currentNode) {
       this._header = currentNode.next;
       this._lenght--;
-    };
+    }
     currentNode = this._header;
     while (currentNode) {
       currentNode.index--;
       currentNode = currentNode.next;
-    };
+    }
     return;
   }
 
@@ -268,7 +266,7 @@ export class LinkedList {
     while (currentNode) {
       strRepr += `${String(currentNode.data)} `;
       currentNode = currentNode.next;
-    };
+    }
     return strRepr;
   }
   /**
@@ -280,9 +278,9 @@ export class LinkedList {
    */
   public updateByIndex(data: NodeType, idx: number): void {
     if (idx >= 0 && idx < this._lenght) {
-      let node = this.getByIndex(idx, false) as Node;
+      const node = this.getByIndex(idx, false) as Node;
       if (node) {
-        node.data = data
+        node.data = data;
       }
       return;
     }
@@ -302,23 +300,23 @@ export class LinkedList {
         while (currentNode.next) {
           currentNode.index--;
           currentNode = currentNode.next;
-        };
+        }
         this._lenght--;
       }
     }
     if (idx > 0 && idx < this._lenght) {
-      let previousNode = this.getByIndex(idx - 1, false) as Node;
-      let toDeleteNode = this.getByIndex(idx, false) as Node;
+      const previousNode = this.getByIndex(idx - 1, false) as Node;
+      const toDeleteNode = this.getByIndex(idx, false) as Node;
       if (toDeleteNode instanceof Node && previousNode instanceof Node) {
-        previousNode.next = toDeleteNode.next
+        previousNode.next = toDeleteNode.next;
         let currentNode = previousNode.next;
         while (currentNode) {
           currentNode.index--;
           currentNode = currentNode.next;
-        };
+        }
         this._lenght--;
       }
-    };
+    }
     return;
   }
 }
@@ -332,5 +330,5 @@ export class LinkedList {
 // console.log(linkedList);
 // console.log(linkedList.getByIndex(1));
 // linkedList.updateByIndex(5, 1); // 4 5 2
-// linkedList.removeByIndex(1); 
+// linkedList.removeByIndex(1);
 // console.log(linkedList.showData());

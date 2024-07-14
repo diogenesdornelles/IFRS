@@ -1,6 +1,5 @@
-import { FilaComPrioridade } from "./filaComPrioridade"
-import { Cliente } from "./cliente";
-
+import { FilaComPrioridade } from './filaComPrioridade';
+import { Cliente } from './cliente';
 
 export class FilaAtendimentoComPrioridade extends FilaComPrioridade {
   private _ordem: number;
@@ -10,7 +9,7 @@ export class FilaAtendimentoComPrioridade extends FilaComPrioridade {
     super();
     this._ordem = 1001;
     this._cod = '';
-  };
+  }
   protected get cod(): string {
     return this._cod;
   }
@@ -24,16 +23,15 @@ export class FilaAtendimentoComPrioridade extends FilaComPrioridade {
     return this._estaVazia();
   }
   public fornecerSenha(cliente: Cliente): void {
-    let ordemStr = String(this.tamanho + this.ordem);
+    const ordemStr = String(this.tamanho + this.ordem);
     this._enfileirar(cliente);
     cliente.senha = this.cod + ordemStr.slice(ordemStr.length - 3, ordemStr.length);
   }
   public realizarAtendimento(): string {
     this._ordem++;
     return this._desenfileirar().toString();
-  };
+  }
   public atualizarFilaAtendimento(): string {
     return this._toString();
   }
-} 
-
+}

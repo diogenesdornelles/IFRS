@@ -6,14 +6,14 @@ export class Cliente {
   private _pcd: boolean;
   private _prioritario: boolean;
 
-  constructor (nome: string, idade: number, gravida: boolean, pdc: boolean) {
+  constructor(nome: string, idade: number, gravida: boolean, pdc: boolean) {
     this._nome = nome;
     this._senha = null;
     this._idade = idade;
     this._gravida = gravida;
     this._pcd = pdc;
     this._prioritario = false;
-  } 
+  }
   public get nome(): string {
     return this._nome;
   }
@@ -52,5 +52,5 @@ export class Cliente {
   }
   toString(): string {
     return `Cliente{nome: ${this.nome}, senha: ${this.senha}, idade: ${this.idade}, gravida: ${this.gravida}, pcd: ${this.pcd}, prioritario: ${this.prioritario}}`;
-}
+  }
 }

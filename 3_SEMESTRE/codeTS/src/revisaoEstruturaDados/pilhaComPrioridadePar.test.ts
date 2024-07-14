@@ -1,5 +1,4 @@
-import PilhaComPrioridadePar from "./pilhaComPrioridadePar";
-
+import PilhaComPrioridadePar from './pilhaComPrioridadePar';
 
 describe('PilhaComPrioridadePar', () => {
   let pilha: PilhaComPrioridadePar<number>;

@@ -1,10 +1,10 @@
 export class Cliente {
   private _nome: string;
   private _senha: string | null;
-  constructor (nome: string) {
+  constructor(nome: string) {
     this._nome = nome;
     this._senha = null;
-  } 
+  }
   public get nome(): string {
     return this._nome;
   }
@@ -19,5 +19,5 @@ export class Cliente {
   }
   toString(): string {
     return `Cliente{nome: ${this.nome}, senha: ${this.senha}}`;
-}
+  }
 }

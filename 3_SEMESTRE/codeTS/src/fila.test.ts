@@ -1,5 +1,5 @@
-import { Fila } from "./fila";
-import { expect, test } from "@jest/globals";
+import { Fila } from './fila';
+import { expect, test } from '@jest/globals';
 
 // • Criar uma fila;
 let fila = new Fila<string>();

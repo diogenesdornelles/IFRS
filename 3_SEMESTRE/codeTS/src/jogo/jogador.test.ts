@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals';
 import { Jogador } from './jogador';
 
-let joao = new Jogador('Joao');
+const joao = new Jogador('Joao');
 
 test('testa nome do jogador', () => {
   expect(joao.name).toBe('Joao');

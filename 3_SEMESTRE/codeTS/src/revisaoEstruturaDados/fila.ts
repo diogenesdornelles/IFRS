@@ -1,4 +1,4 @@
-import Container from "./container";
+import Container from './container';
 
 export default class Fila<T> extends Container<T> {
   constructor() {
@@ -6,15 +6,14 @@ export default class Fila<T> extends Container<T> {
   }
   public topo(): T {
     if (!this.estaVazia()) {
-      return this.elementos[this.tamanho - 1]
-    }
-    else {
+      return this.elementos[this.tamanho - 1];
+    } else {
       return undefined as T;
-    };
+    }
   }
   public remover(): T {
     if (!this.estaVazia()) {
-      let removido = this.elementos[this.tamanho - 1];
+      const removido = this.elementos[this.tamanho - 1];
       this.tamanho--;
       return removido;
     } else {

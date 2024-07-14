@@ -169,20 +169,16 @@ var LinkedList = /** @class */ (function () {
             this.setHeader(node);
             return;
         }
-        ;
         var currentNode = this._header;
         while (currentNode.next) {
             currentNode = currentNode.next;
         }
-        ;
         if (currentNode) {
             currentNode.next = node;
             this._lenght++;
         }
-        ;
         return;
     };
-    ;
     /**
      *
      *
@@ -209,7 +205,6 @@ var LinkedList = /** @class */ (function () {
         this._lenght++;
         return;
     };
-    ;
     /**
      *
      *
@@ -250,17 +245,14 @@ var LinkedList = /** @class */ (function () {
                     previousNode = currentNode;
                     currentNode = currentNode.next;
                 }
-                ;
                 if (previousNode) {
                     previousNode.next = null;
                     this._lenght--;
                 }
-                ;
             }
         }
         return;
     };
-    ;
     /**
      *
      *
@@ -272,13 +264,11 @@ var LinkedList = /** @class */ (function () {
             this._header = currentNode.next;
             this._lenght--;
         }
-        ;
         currentNode = this._header;
         while (currentNode) {
             currentNode.index--;
             currentNode = currentNode.next;
         }
-        ;
         return;
     };
     /**
@@ -294,7 +284,6 @@ var LinkedList = /** @class */ (function () {
             strRepr += "".concat(String(currentNode.data), " ");
             currentNode = currentNode.next;
         }
-        ;
         return strRepr;
     };
     /**
@@ -328,7 +317,6 @@ var LinkedList = /** @class */ (function () {
                     currentNode.index--;
                     currentNode = currentNode.next;
                 }
-                ;
                 this._lenght--;
             }
         }
@@ -342,11 +330,9 @@ var LinkedList = /** @class */ (function () {
                     currentNode.index--;
                     currentNode = currentNode.next;
                 }
-                ;
                 this._lenght--;
             }
         }
-        ;
         return;
     };
     return LinkedList;
@@ -361,5 +347,5 @@ exports.LinkedList = LinkedList;
 // console.log(linkedList);
 // console.log(linkedList.getByIndex(1));
 // linkedList.updateByIndex(5, 1); // 4 5 2
-// linkedList.removeByIndex(1); 
+// linkedList.removeByIndex(1);
 // console.log(linkedList.showData());

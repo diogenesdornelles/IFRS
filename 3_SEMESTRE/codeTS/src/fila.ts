@@ -1,11 +1,10 @@
-import { Container } from "./container";
+import { Container } from './container';
 
 /**
  * Classe que representa uma estrutura de dados fila.
  * @typeparam T Tipo dos elementos armazenados na fila.
  */
 export class Fila<T> extends Container<T> {
-
   /**
    * Construtor da classe Fila.
    * Inicializa a fila como vazia.
@@ -24,7 +23,7 @@ export class Fila<T> extends Container<T> {
     } else {
       return undefined as T; // Retorna undefined se a fila estiver vazia
     }
-  };
+  }
 
   /**
    * Remove e retorna o primeiro elemento da fila.
@@ -42,17 +41,17 @@ export class Fila<T> extends Container<T> {
     } else {
       return undefined as T; // Retorna undefined se a fila estiver vazia
     }
-  };
+  }
 }
 
-let filaNumbers = new Fila<number>()
-let filaStrings = new Fila<string>()
+let filaNumbers = new Fila<number>();
+let filaStrings = new Fila<string>();
 
-filaNumbers.adicionar(1)
-filaStrings.adicionar('Joao')
+filaNumbers.adicionar(1);
+filaStrings.adicionar('Joao');
 
-console.log(filaNumbers.estaVazia())
-console.log(filaStrings.estaVazia())
+console.log(filaNumbers.estaVazia());
+console.log(filaStrings.estaVazia());
 
-console.log(filaNumbers.toString())
-console.log(filaStrings.toString())
+console.log(filaNumbers.toString());
+console.log(filaStrings.toString());

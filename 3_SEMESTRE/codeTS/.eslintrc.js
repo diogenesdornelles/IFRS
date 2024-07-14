@@ -12,7 +12,7 @@ module.exports = {
   rules: {
     quotes: ['error', 'single',],
     semi: ['error', 'always',],
-    'comma-dangle': ['error', 'off',],
+    // 'comma-dangle': ['error', 'one',],
     'no-console': 'off',
     'prettier/prettier': 2,
   },

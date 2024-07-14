@@ -98,7 +98,6 @@ describe('LinkedList Class', () => {
   });
 });
 
-
 describe('LinkedList Additional Tests', () => {
   let list: LinkedList;
 
