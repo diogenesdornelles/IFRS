@@ -1,0 +1,286 @@
+@startuml
+class Locadora {
+    + frota: Frota
+    + clientes: Clientes
+    + marcas: Marcas
+    + modelos: Modelos
+    + gerentes: Gerentes
+    + funcionarios: Funcionarios
+}
+Locadora *-- Frota
+Locadora *-- Clientes
+Locadora *-- Marcas
+Locadora *-- Modelos
+Locadora *-- Gerentes
+Locadora *-- Funcionarios
+
+abstract class Repositorio<T, U> {
+    - items: list<T>
+    + get_items(): list<T>
+    + get_item(id: str): T
+    + adicionar_item(agente: U, item: T)
+    + contem(item: T): bool
+    + alterar_item(agente: U, id: str, item: T)
+}
+
+class Frota extends Repositorio<Veiculo, AnalistaCadastro> {
+    - veiculos: list<Veiculo>
+    + get_items(): list<Veiculo>
+    + adicionar_item(agente: AnalistaCadastro, veiculo: Veiculo)
+    + alterar_item(agente: AnalistaCadastro, id: str, veiculo: Veiculo)
+    + contem(item: Veiculo): bool
+    + get_item(id: str): Veiculo
+}
+Frota o-- Veiculo
+
+class Veiculo {
+    - id: str
+    - marca: Marca
+    - modelo: Modelo
+    - ano_fabricacao: int
+    - cor: str
+    - chassi: str
+    - placa: str
+    + get_id(): str
+    + get_marca(): Marca
+    + set_marca(marca: Marca)
+    + get_modelo(): Modelo
+    + set_modelo(modelo: Modelo)
+    + get_ano_fabricacao(): int
+    + set_ano_fabricacao(ano: int)
+    + get_cor(): str
+    + set_cor(cor: str)
+    + get_chassi(): str
+    + set_chassi(chassi: str)
+    + get_placa(): str
+    + set_placa(placa: str)
+}
+Veiculo o-- Marca
+Veiculo o-- Modelo
+
+class Marcas extends Repositorio<Marca, AnalistaCadastro> {
+    - items: list<Marca>
+    + get_items(): list<Marca>
+    + adicionar_item(agente: AnalistaCadastro, marca: Marca)
+    + get_item(id: str): Marca
+    + contem(item: Marca): bool
+    + alterar_item(agente: AnalistaCadastro, id: str, marca: Marca): bool
+}
+Marcas o-- Marca
+
+class Modelos extends Repositorio<Modelo, AnalistaCadastro> {
+    - items: list<Modelo>
+    + get_items(): list<Modelo>
+    + adicionar_item(agente: AnalistaCadastro, modelo: Modelo)
+    + get_item(id: str): Modelo
+    + contem(item: Modelo): bool
+    + alterar_item(agente: AnalistaCadastro, id: str, modelo: Modelo): bool
+}
+Modelos o-- Modelo
+
+class Marca {
+    - id: str
+    - marca: str
+    + get_id(): str
+    + get_marca(): str
+    + set_marca(marca: str)
+}
+
+class Modelo {
+    - id: str
+    - id_marca: str
+    - modelo: str
+    + get_id(): str
+    + get_id_marca(): str
+    + set_id_marca(id_marca: str)
+    + get_modelo(): str
+    + set_modelo(modelo: str)
+}
+
+class Pessoa {
+    - id: str
+    - nome: str
+    - cpf: str
+    - telefone: str
+    + get_id(): str
+    + get_nome(): str
+    + set_nome(nome: str)
+    + get_cpf(): str
+    + set_cpf(cpf: str)
+    + get_telefone(): str
+    + set_telefone(telefone: str)
+    + logar()
+    + deslogar()
+}
+
+class Clientes extends Repositorio<Cliente, AnalistaCadastro> {
+    - items: list<Cliente>
+    + get_items(): list<Cliente>
+    + adicionar_item(agente: AnalistaCadastro, cliente: Cliente)
+    + get_item(id: str): Cliente
+    + contem(item: Cliente): bool
+    + alterar_item(agente: AnalistaCadastro, id: str, cliente: Cliente): bool
+}
+Clientes o-- Cliente
+
+class Cliente extends Pessoa {
+    - contratos_locacao: list<ContratoLocacao>
+    - devolucoes: list<Devolucao>
+    - pagamentos: list<Pagamento>
+    - data_nascimento: str
+    - endereco: str
+    + get_data_nascimento(): str
+    + set_data_nascimento(data_nascimento: str)
+    + get_endereco(): str
+    + set_endereco(endereco: str)
+    + visualizar_historico_locacao(): list<ContratoLocacao>
+    + adicionar_contrato(agente: AgenteLocacao, contrato_locacao: ContratoLocacao)
+    + get_contrato(id: str): ContratoLocacao
+    + contem_contrato(id: str): bool
+    + adicionar_devolucao(agente: AgenteLocacao, devolucao: Devolucao)
+    + get_devolucao(id: str): Devolucao
+    + contem_devolucao(id: str): bool
+    + adicionar_pagamento(agente: Caixa, pagamento: Pagamento)
+    + get_pagamento(id: str): Pagamento
+    + contem_pagamento(id: str): bool
+}
+Cliente o-- ContratoLocacao
+Cliente o-- Devolucao
+Cliente o-- Pagamento
+
+class Funcionarios extends Repositorio<Funcionario, Gerente> {
+    - items: list<Funcionario>
+    + get_items(): list<Funcionario>
+    + adicionar_item(agente: Gerente, funcionario: Funcionario)
+    + get_item(id: str): Funcionario
+    + contem(funcionario: Funcionario): bool
+    + alterar_item(agente: Gerente, id: str, funcionario: Funcionario): bool
+}
+Funcionarios o-- Funcionario
+
+class Gerentes extends Repositorio<Gerente, Gerente> {
+    - items: list<Gerente>
+    + get_items(): list<Gerente>
+    + adicionar_item(agente: Gerente, gerente: Gerente)
+    + get_item(id: str): Gerente
+    + contem(gerente: Gerente): bool
+    + alterar_item(agente: Gerente, id: str, gerente: Gerente): bool
+}
+Gerentes o-- Gerente
+
+class Funcionario extends Pessoa {
+    - endereco: str
+    - funcao: str
+    - setor: str
+    + get_endereco(): str
+    + set_endereco(endereco: str)
+    + get_funcao(): str
+    + set_funcao(funcao: str)
+    + get_setor(): str
+    + set_setor(setor: str)
+}
+
+class AgenteLocacao extends Funcionario {}
+class AnalistaCadastro extends Funcionario {}
+class Caixa extends Funcionario {}
+class Gerente extends Pessoa {}
+
+class ContratoLocacao {
+    - id: str
+    - cpf_cliente: str
+    - data_locacao: str
+    - data_hora_devolucao: str
+    - placa: str
+    - valor_unitario_locacao: float
+    - valor_total_locacao: float
+    + get_id(): str
+    + get_cpf_cliente(): str
+    + get_data_locacao(): str
+    + get_data_hora_devolucao(): str
+    + get_placa(): str
+    + get_valor_unitario_locacao(): float
+    + get_valor_total_locacao(): float
+    + set_cpf_cliente(cpf_cliente: str)
+    + set_data_locacao(data_locacao: str)
+    + set_data_hora_devolucao(data_hora_devolucao: str)
+    + set_placa(placa: str)
+    + set_valor_unitario_locacao(valor_unitario: float)
+    + set_valor_total_locacao(valor_total: float)
+}
+
+class Devolucao {
+    - id: str
+    - placas_veiculos: list<str>
+    - cpf_cliente: str
+    - data_devolucao: str
+    - data_planejada_devolucao: str
+    - valores_unitarios_veiculos_devolvidos: list<float>
+    - valor_multa: float
+    - valor_total_devolucao: float
+    + get_id(): str
+    + get_placas_veiculos(): list<str>
+    + get_cpf_cliente(): str
+    + get_data_devolucao(): str
+    + get_data_planejada_devolucao(): str
+    + get_valores_unitarios_veiculos_devolvidos(): list<float>
+    + get_valor_multa(): float
+    + get_valor_total_devolucao(): float
+    + set_placas_veiculos(placas_veiculos: list<str>)
+    + set_cpf_cliente(cpf_cliente: str)
+    + set_data_devolucao(data_devolucao: str)
+    + set_data_planejada_devolucao(data_planejada_devolucao: str)
+    + set_valores_unitarios_veiculos_devolvidos(valores_unitarios_veiculos_devolvidos: list<float>)
+    + set_valor_multa(valor_multa: float)
+    + set_valor_total_devolucao(valor_total_devolucao: float)
+}
+
+class Pagamento {
+    - id: str
+    - valor_recebido: float
+    - data_hora_pagamento: str
+    + get_id(): str
+    + get_valor_recebido(): float
+    + get_data_hora_pagamento(): str
+    + set_valor_recebido(valor_recebido: float)
+    + set_data_hora_pagamento(data_hora_pagamento: str)
+}
+
+
+Frota --> AnalistaCadastro : inclui
+Frota --> AnalistaCadastro : altera
+Frota --> Veiculo : adicionado
+Frota --> Veiculo : alterado
+
+Marcas --> AnalistaCadastro : inclui
+Marcas --> AnalistaCadastro : altera
+Marcas --> Marca : adicionado
+Marcas --> Marca : alterado
+
+Modelos --> AnalistaCadastro : inclui
+Modelos --> AnalistaCadastro : altera
+Modelos --> Modelo : adicionado
+Modelos --> Modelo : alterado
+
+Clientes --> AnalistaCadastro : inclui
+Clientes --> AnalistaCadastro : altera
+Clientes --> Cliente : adicionado
+Clientes --> Cliente : alterado
+
+Funcionarios --> Gerente : inclui
+Funcionarios --> Gerente : altera
+Funcionarios --> Funcionario : adicionado
+Funcionarios --> Funcionario : alterado
+
+Gerentes --> Gerente : inclui
+Gerentes --> Gerente : altera
+Gerentes --> Gerente : adicionado
+Gerentes --> Gerente : alterado
+
+Cliente --> AgenteLocacao : adiciona_contrato
+Cliente --> AgenteLocacao : adiciona_devolucao
+Cliente --> Caixa : adiciona_pagamento
+Cliente --> ContratoLocacao : adicionado
+Cliente --> Devolucao : adicionado
+Cliente --> Pagamento : adicionado
+
+@enduml

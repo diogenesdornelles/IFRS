@@ -2,5 +2,5 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  roots: ['src/conjunto'],
+  roots: ['src/17_07_atividade_02'],
 };
