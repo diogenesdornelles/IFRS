@@ -1,0 +1,38 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  font-size: 2vh;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  color: white;
+  transition: all 1s ease;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  text-shadow: 1px white;
+}

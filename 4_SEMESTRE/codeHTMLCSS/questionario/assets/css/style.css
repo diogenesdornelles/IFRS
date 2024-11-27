@@ -1,0 +1,143 @@
+@import url(./vars.css);
+
+.questionario__header {
+  background-color: #090029;
+  height: fit-content;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.questionario__h2 {
+  color: white;
+  font-size: 26px;
+}
+
+.form__form {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 100px;
+  min-width: 300px;
+  width: 50vw;
+  max-width: 500px;
+  text-align: justify;
+  color: white;
+  background-color: white;
+  box-shadow: 10px 10px 20px #bebebe,
+    -10px -10px 20px #ffffff;
+}
+
+.question__section {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.question__section:nth-child(odd) {
+  background-color: rgba(0, 0, 50, 0.874);
+
+  input[type="radio"]:checked+label {
+    background-color: rgb(60, 60, 190);
+  }
+
+  label:hover {
+    background-color: rgba(93, 93, 141, 0.584);
+  }
+}
+
+.question__section:nth-child(even) {
+  background-color: rgba(1, 1, 78, 0.704);
+
+  input[type="radio"]:checked+label {
+    background-color: rgba(9, 9, 79, 0.704);
+  }
+
+  label:hover {
+    background-color: rgba(1, 1, 78, 0.704);
+  }
+}
+
+.question__p {
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  padding: 10px;
+  font-size: 12px;
+}
+
+
+
+.question__p::first-letter {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.answer__label {
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 11px;
+}
+
+.answer__label:last-child {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+}
+
+.button__div {
+  padding: 20px;
+}
+
+.submit__button,
+.clear__button,
+.return__button {
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  background: radial-gradient(circle at 100% 0%, rgba(94, 138, 243, 1) 15%, rgba(243, 61, 223, 1));
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit__button:hover {
+  opacity: .5;
+}
+
+.submit__button:disabled {
+  opacity: .5;
+  background-color: rgba(128, 128, 128, 0.426);
+  cursor: none;
+}
+
+footer {
+  background-color: #090029;
+  height: 300px;
+  width: 100%;
+  padding: 10px 0;
+}

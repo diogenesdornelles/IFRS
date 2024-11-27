@@ -1,0 +1,42 @@
+@import url(./vars.css);
+
+.bg-blue-1 {
+  background-color: var(--blue-1)
+} 
+
+.bg-blue-1h {
+  background-color: var(--blue-1h)
+} 
+
+.bg-blue-2 {
+  background-color: var(--blue-2)
+}
+
+.bg-yellow-1 {
+  background-color: var(--yellow-1);
+}
+
+.ft-gray-1 {
+  color: var(--gray-1);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ft-green-1 {
+  color: var(--green-1);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased
+}
+
+.ft-white {
+  color: white;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-white {
+  background-color: white;
+}

@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+list-style: none;
+}
+body {
+font-size: 1rem;
+font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+height: 100vh;
+background: #f1faee;
+justify-content: center;
+}
+
+form {
+    padding: 40px;
+    border: solid 2px rgb(187, 187, 187);
+    display: flex;
+    justify-content: center;
+}

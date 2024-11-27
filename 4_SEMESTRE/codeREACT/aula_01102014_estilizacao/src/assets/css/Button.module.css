@@ -1,0 +1,22 @@
+.button {
+    padding: 20px;
+    width: 200px;
+    background-color: rgba(79, 79, 252, 0.568);
+    color: white;
+    border-radius: 5px;
+}
+
+.botao2 {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.ativo2 {
+background-color: green;
+color: white;
+}
+.inativo2 {
+background-color: gray;
+color: white;
+}

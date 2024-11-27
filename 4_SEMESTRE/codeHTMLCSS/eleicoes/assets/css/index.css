@@ -1,0 +1,59 @@
+@import url(./vars.css);
+
+.main-content {
+  flex: 1;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content__title {
+  margin-top: 20px;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  max-width: 80vw;
+  gap: 10px;
+  margin-bottom: 5vh;
+}
+
+.cards__item {
+  height: fit-content;
+  border-radius: 5px;
+  transition: all 1s ease;
+}
+
+.cards__item:hover {
+  box-shadow: 9px 7px 22px -11px rgba(66, 68, 90, 0.59);
+}
+
+
+.cards__image {
+  height: auto;
+  min-width: 150px;
+  max-width: 50%;
+  filter: opacity(.1) hue-rotate(180deg);
+}
+
+.cards__name {
+  margin-top: 20px;
+  font-size: 20px;
+  border-radius: 0 0 5px 5px;
+}
+
+@media only screen and (max-width: 500px) {
+  .cards {
+    margin-bottom: 100px;
+  }
+  .main-content__title {
+    font-size: 3vh;
+  }
+}

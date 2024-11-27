@@ -1,0 +1,69 @@
+.candidato {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.candidato-card {
+  width: fit-content;
+  height: auto;
+  margin: 50px auto;
+  border-radius: 10px;
+  border: solid 1px var(--blue-1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candidato-card__title {
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+  font-size: 30px;
+  width: 100%;
+  border-radius: 7px 7px 0 0;
+}
+
+.candidato-card__div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 30px;
+  gap: 30px;
+}
+
+.candidato-card__image {
+  flex: 1;
+  max-width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  margin-left: 20px;
+  filter: opacity(.1) hue-rotate(180deg);
+}
+
+.candidato-card__list {
+  flex: 0.5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.candidato-card__item {
+  margin-bottom: 15px;
+}
+
+.candidato-card__label {
+  font-weight: bold;
+  font-size: 22px;
+  color: var(--blue-1);
+  margin: 0;
+}
+
+.candidato-card__info {
+  font-size: 20px;
+  margin: 5px 0 0 0;
+}

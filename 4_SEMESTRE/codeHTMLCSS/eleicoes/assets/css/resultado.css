@@ -1,0 +1,74 @@
+@import url("./colors.css");
+
+.resultado__table {
+  border: solid 1px rgb(203, 202, 202);
+  max-width: 60vh;
+  border-collapse: collapse;
+  background-color: var(--white);
+  border-radius: 5px;
+  color: var(--gray-1);
+  overflow:auto;
+}
+
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height: fit-content;
+  overflow:auto;  
+  margin-top:20px;
+  max-width: 800px;
+}
+
+@media only screen and (max-width: 700px) {
+  #table-scroll {
+    
+    max-width: 500px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #table-scroll {
+    
+    max-width: 450px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #table-scroll {
+    
+    max-width: 350px;
+  }
+}
+
+
+.resultado__table th {
+  padding: 10px 15px;
+  background-color: var(--blue-1);
+  color: var(--white);
+}
+
+.resultado__table td {
+  padding: 10px 15px;
+}
+
+.resultado__table tbody tr:nth-child(odd) {
+  background-color: rgba(231, 230, 230, 0.308);
+}
+
+.resultado__table tbody tr:nth-child(odd):hover {
+  background-color: rgba(231, 230, 230, 0.642);
+}
+
+.resultado__table tbody tr:nth-child(even):hover {
+  background-color: rgba(243, 241, 241, 0.467);
+}
+
+.resultado__table h1 {
+  background-color: var(--white);
+  border-top: solid 1px rgb(203, 202, 202);
+  border-left: solid 1px rgb(203, 202, 202);
+  border-right: solid 1px rgb(203, 202, 202);
+  text-align: start;
+  padding: 10px;
+}

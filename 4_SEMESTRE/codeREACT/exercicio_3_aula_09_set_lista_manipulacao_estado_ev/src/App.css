@@ -1,0 +1,60 @@
+header {
+  background-color: #005C53;
+  color: white;
+}
+
+body {
+background-color: #D6D58E;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: #005C53;
+  font-size: large;
+  padding: 5px 10px 5px 10px;
+  font-weight: bolder;
+}
+
+label {
+  font-weight: bold;
+  color: rgb(56, 56, 56);
+}
+
+.search {
+  margin-top: 50px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input {
+  border: 2px solid #005C53;
+  height: 40px;
+  width: 200px;
+  border-radius: 20px;
+  transition: all 0.5s ease 0.2;
+  padding: 10px;
+}
+
+input:hover {
+  width: 300px;
+}
+
+section {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #005C53;
+  width: 100%;
+  padding: 60px;
+  color: white;
+}

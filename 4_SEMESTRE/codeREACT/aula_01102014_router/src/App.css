@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: flex-start;
+    /* Alinha o conteúdo no topo */
+    min-width: 320px;
+    min-height: 100vh;
+    /* Garante que o body ocupe a altura da tela */
+    background-color: #f4f4f4;
+    /* Cor de fundo opcional */
+    font-family: Arial, sans-serif;
+}
+
+div {
+    max-width: 1400px;
+    /* Largura máxima do conteúdo */
+    width: 100%;
+    /* Usa 100% da largura disponível */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Inclui o padding na largura total */
+    background-color: #fff;
+    /* Fundo branco para o conteúdo */
+    margin-top: 20px;
+    /* Espaçamento opcional a partir do topo */
+}
+
+/* Cabeçalho */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    /* Remove marcadores de lista */
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    /* Coloca os itens da lista em linha */
+    justify-content: center;
+    /* Centraliza os itens de navegação */
+}
+
+nav ul li {
+    margin: 0 15px;
+    /* Espaçamento entre os itens */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    /* Remove sublinhado dos links */
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    /* Sublinha ao passar o mouse */
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}

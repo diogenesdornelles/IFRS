@@ -1,0 +1,43 @@
+@import url(./vars.css);
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  height: fit-content;
+  font-size: 2vh;
+  text-align: center;
+  background-color: whitesmoke
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 117, 1) 35%, rgba(101, 63, 183, 1) 66%, rgba(0, 189, 255, 1) 100%);
+}
+
+a {
+  color: white;
+  transition: all 1s ease;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  text-shadow: 1px white;
+}

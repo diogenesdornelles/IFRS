@@ -1,0 +1,376 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Books API",
+    "description": "API para gerenciar livros, incluindo criação, leitura, atualização, exclusão, upload de imagem e paginação."
+  },
+  "host": "localhost:3001",
+  "basePath": "/api/v1/Books",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/page": {
+      "get": {
+        "summary": "Obter livros paginados",
+        "description": "Retorna uma lista de livros paginados com base nos parâmetros de consulta.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "Número da página",
+            "required": false,
+            "default": 1
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "integer",
+            "description": "Número de itens por página: máximo de 20 livros",
+            "required": false,
+            "default": 10
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de livros paginados",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "docs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Book"
+                  }
+                },
+                "totalDocs": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "totalPages": {
+                  "type": "integer"
+                },
+                "page": {
+                  "type": "integer"
+                },
+                "hasNextPage": {
+                  "type": "boolean"
+                },
+                "hasPrevPage": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Obter todos os livros",
+        "description": "Retorna uma lista de todos os livros.",
+        "responses": {
+          "200": {
+            "description": "Lista de livros",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar um novo livro",
+        "description": "Cria um novo livro no sistema.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BookInput"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Livro criado com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          },
+          "500": {
+            "description": "Erro interno"
+          }
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "summary": "Obter livro por ID",
+        "description": "Retorna os detalhes de um livro com base no ID fornecido.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "ID do livro"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalhes do livro",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          },
+          "404": {
+            "description": "Livro não encontrado"
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualizar livro por ID",
+        "description": "Atualiza os detalhes de um livro existente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "ID do livro: ObjectId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BookInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Livro atualizado com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          },
+          "404": {
+            "description": "Livro não encontrado"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir livro por ID",
+        "description": "Exclui um livro com base no ID fornecido.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "ID do livro"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Livro excluído com sucesso"
+          },
+          "404": {
+            "description": "Livro não encontrado"
+          }
+        }
+      }
+    },
+    "/search": {
+      "get": {
+        "summary": "Buscar livros com filtros",
+        "description": "Busca avançada de livros com base em filtros como título, descrição, número de páginas e datas de publicação. Máximo de 10 livros.",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Substring para buscar no título do livro."
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Substring para buscar na descrição do livro."
+          },
+          {
+            "name": "excerpt",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "description": "Substring para buscar no trecho do livro."
+          },
+          {
+            "name": "minPages",
+            "in": "query",
+            "type": "integer",
+            "required": false,
+            "description": "Número mínimo de páginas.",
+            "default": 0
+          },
+          {
+            "name": "maxPages",
+            "in": "query",
+            "type": "integer",
+            "required": false,
+            "description": "Número máximo de páginas.",
+            "default": 100000000
+          },
+          {
+            "name": "minPublishDate",
+            "in": "query",
+            "type": "string",
+            "format": "date",
+            "required": false,
+            "description": "Data mínima de publicação no formato ISO.",
+            "default": "1900-01-01"
+          },
+          {
+            "name": "maxPublishDate",
+            "in": "query",
+            "type": "string",
+            "format": "date",
+            "required": false,
+            "description": "Data máxima de publicação no formato ISO.",
+            "default": "data atual"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de livros que atendem aos filtros.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          },
+          "400": {
+            "description": "Erro nos parâmetros da requisição."
+          },
+          "500": {
+            "description": "Erro interno no servidor."
+          }
+        }
+      }
+    },
+    "/upload/{id}": {
+      "post": {
+        "summary": "Fazer upload de imagem para um livro",
+        "description": "Faz upload de uma imagem para um livro e atualiza o campo `image`.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "ID do livro"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "type": "file",
+            "required": true,
+            "description": "Arquivo de imagem a ser enviado"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Imagem enviada e livro atualizado com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          },
+          "400": {
+            "description": "Erro no envio da imagem"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Book": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "pageCount": {
+          "type": "integer"
+        },
+        "excerpt": {
+          "type": "string"
+        },
+        "publishDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "image": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "BookInput": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "string",
+          "required": true
+        },
+        "pageCount": {
+          "type": "integer",
+          "required": true
+        },
+        "excerpt": {
+          "type": "string",
+          "required": true
+        },
+        "publishDate": {
+          "type": "string",
+          "format": "date",
+          "required": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import url(./vars.css);
+
+.bg-blue-1 {
+  background-color: var(--blue-1)
+} 
+
+.bg-blue-2 {
+  background-color: var(--blue-2)
+} 
+
+.bg-blue-3 {
+  background-color: var(--blue-3)
+}
+
+.bg-green-1 {
+  background-color: var(--green-1)
+}
+
+.bg-white {
+  background-color: white;
+}

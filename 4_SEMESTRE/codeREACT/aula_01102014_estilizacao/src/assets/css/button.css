@@ -1,0 +1,15 @@
+/* App.css */
+.botao {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.ativo {
+background-color: green;
+color: white;
+}
+.inativo {
+background-color: gray;
+color: white;
+}

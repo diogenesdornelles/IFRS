@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/colors.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/tooltip.css">
+  <link rel="stylesheet" href="assets/css/submenu.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/scrollbar.css">
+  <link rel="shortcut icon" href="assets/images/flag.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+  </style>
+  <title>Eleições 2024 - Candidatos</title>
+</head>
+
+<body class="page__body ubuntu-regular bg-blue-2">
+  <header class="header bg-blue-1">
+    <nav class="menu">
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a href="./index.html" class="menu__link ft-white">Home</a>
+        </li>
+        <li class="menu__item">
+          <div class="dropdown">
+            <p class="dropdown__button ft-white">Candidatos</p>
+            <div class="dropdown__content bg-blue-1">
+              <a class="dropdown__link ft-white" href="candidatoA.html">CandidatoA</a>
+              <a class="dropdown__link ft-white" href="candidatoB.html">CandidatoB</a>
+              <a class="dropdown__link ft-white" href="candidatoC.html">CandidatoC</a>
+              <a class="dropdown__link ft-white" href="candidatoD.html">CandidatoD</a>
+              <a class="dropdown__link ft-white" href="candidatoE.html">CandidatoE</a>
+            </div>
+          </div>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link ft-white" href="resultado.html">Resultado</a>
+        </li>
+        <li class="menu__item">
+          <h1 class="header__title ft-white">Eleições 2024</h1>
+        </li>
+      </ul>
+    </nav>
+    <!-- Main Hamburger Menu Toggle -->
+    <input type="checkbox" id="hamburger-checkbox" class="hamburger__checkbox">
+    <label for="hamburger-checkbox" class="hamburger__label">
+      <i class="fa-solid fa-bars hamburger__icon--open"></i>
+      <i class="fa fa-close hamburger__icon--close"></i>
+    </label>
+    <h1 class="hamburger__title" style="color: #ffffff;">Eleições 2024</h1>
+
+    <!-- Navigation Menu -->
+    <nav class="hamburger">
+      <ul class="hamburger__list">
+        <li class="hamburger__item">
+          <a href="./index.html" class="hamburger__link">Home</a>
+        </li>
+
+        <!-- Submenu Toggle -->
+        <li class="hamburger__item">
+          <input type="checkbox" id="submenu-checkbox" class="submenu__checkbox">
+          <label for="submenu-checkbox" class="submenu__label">
+            <span class="hamburger-dropdown__button">Candidatos</span>
+          </label>
+          <!-- Submenu Items -->
+          <ul class="hamburger-dropdown__content">
+            <li class="hamburger-dropdown__list-item"><a class="hamburger-dropdown__link" href="candidatoA.html">CandidatoA</a></li>
+            <li class="hamburger-dropdown__list-item"><a class="hamburger-dropdown__link" href="candidatoB.html">CandidatoB</a></li>
+            <li class="hamburger-dropdown__list-item"><a class="hamburger-dropdown__link" href="candidatoC.html">CandidatoC</a></li>
+            <li class="hamburger-dropdown__list-item"><a class="hamburger-dropdown__link" href="candidatoD.html">CandidatoD</a></li>
+            <li class="hamburger-dropdown__list-item"><a class="hamburger-dropdown__link" href="candidatoE.html">CandidatoE</a></li>
+          </ul>
+        </li>
+
+        <li class="hamburger__item">
+          <a class="hamburger__link" href="resultado.html">Resultado</a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+  <div class="submenu bg-white">
+    <h2 class="submenu__title ft-green-1">Votação: Domingo, 06 de Outubro de 2024</h2>
+  </div>
+  <main class="main-content">
+    <h2 class="main-content__title ft-gray-1">Candidatos a Prefeito em nosso Município</h2>
+    <section class="cards">
+      <a href="candidatoA.html" data-title="Clique para ver candidato" class="cards__item tooltip bg-white">
+        <div class="cards__content">
+          <img src="./assets/images/user.png" alt="candidato" class="cards__image">
+          <p class="cards__name ft-white bg-blue-1">CandidatoA</p>
+        </div>
+      </a>
+      <!-- Repetir o bloco 'cards__item' para cada candidato -->
+      <a href="candidatoB.html" data-title="Clique para ver candidato" class="cards__item tooltip bg-white">
+        <div class="cards__content">
+          <img src="./assets/images/user.png" alt="candidato" class="cards__image">
+          <p class="cards__name ft-white bg-blue-1">CandidatoB</p>
+        </div>
+      </a>
+      <a href="candidatoC.html" data-title="Clique para ver candidato" class="cards__item tooltip bg-white">
+        <div class="cards__content">
+          <img src="./assets/images/user.png" alt="candidato" class="cards__image">
+          <p class="cards__name ft-white bg-blue-1">CandidatoC</p>
+        </div>
+      </a>
+      <a href="candidatoD.html" data-title="Clique para ver candidato" class="cards__item tooltip bg-white">
+        <div class="cards__content">
+          <img src="./assets/images/user.png" alt="candidato" class="cards__image">
+          <p class="cards__name ft-white bg-blue-1">CandidatoD</p>
+        </div>
+      </a>
+      <a href="candidatoE.html" data-title="Clique para ver candidato" class="cards__item tooltip bg-white">
+        <div class="cards__content">
+          <img src="./assets/images/user.png" alt="candidato" class="cards__image">
+          <p class="cards__name ft-white bg-blue-1">CandidatoE</p>
+        </div>
+      </a>
+    </section>
+  </main>
+  <footer class="footer bg-blue-1">
+    <p class="footer__p ft-white">Eleições 2024. Justiça Eleitoral do Brasil</p>
+  </footer>
+</body>
+
+</html>

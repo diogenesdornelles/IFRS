@@ -1,0 +1,53 @@
+header {
+  background-color: #005C53;
+  color: white;
+}
+
+body {
+background-color: #D6D58E;
+}
+
+nav {
+  background-color: #042940;
+}
+
+ul {
+  list-style: none;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+
+aside  {
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul li {
+  padding: 30px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 5px 30px 5px 30px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #005C53;
+  width: 100%;
+  padding: 60px;
+  color: white;
+}

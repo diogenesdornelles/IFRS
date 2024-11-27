@@ -1,0 +1,28 @@
+@import url(./vars.css);
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip::before {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(500%);
+  background-color: var(--blue-1);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+}
