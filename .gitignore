@@ -3,3 +3,5 @@ node_modules
 __pychache__
 .idea
 **/*.env
+.env
+/4_SEMESTRE/codeNODE/appLivros/backend/.env
