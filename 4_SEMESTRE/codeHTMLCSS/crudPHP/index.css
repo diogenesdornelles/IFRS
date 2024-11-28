@@ -1,0 +1,16 @@
+.table {
+    max-width: 70vh;
+}
+
+.ft-red {
+    color: red;
+}
+
+thead {
+    background-color: rgba(221, 221, 221, 0.815);
+}
+
+td, th {
+    padding: 10px;
+    border: solid 1px rgb(219, 219, 219);
+}

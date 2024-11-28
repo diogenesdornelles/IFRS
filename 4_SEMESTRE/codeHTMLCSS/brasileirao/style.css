@@ -1,0 +1,71 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+td,
+th {
+  text-align: center;
+}
+
+i {
+  cursor: pointer;
+}
+
+thead {
+  background-color: rgba(218, 216, 216, 0.863);
+}
+
+tbody tr:hover {
+  background-color: rgba(233, 233, 233, 0.863);
+}
+
+#table {
+  overflow: scroll;
+  margin-bottom: 300px;
+  margin: 40px 20px 300px 20px;
+  max-width: 90vw;
+  min-width: 400px;
+  border-radius: 5px;
+}
+
+.degola {
+  background-color: rgba(255, 60, 0, 0.438);
+}
+
+.sula {
+  background-color: rgba(0, 81, 255, 0.301);
+}
+
+.liberta {
+  background-color: rgba(51, 255, 0, 0.301);
+}
+
+.degola:hover {
+  background-color: rgba(255, 60, 0, 0.678);
+}
+
+.sula:hover {
+  background-color: rgba(0, 81, 255, 0.562);
+}
+
+.liberta:hover {
+  background-color: rgba(51, 255, 0, 0.568);
+}
+
+.bi-caret-down-fill {
+  transition: transform 0.3s ease
+}
