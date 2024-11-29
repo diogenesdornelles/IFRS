@@ -9,8 +9,20 @@
 
 // v, d, e,  gc, gp, time, pontos, jogos, saldo, aproveitamento
 
-
+/**
+ * Classe que executa o gerenciamento da tabela
+ *
+ * @class TableManager
+ */
 class TableManager {
+  /**
+   * Creates an instance of TableManager.
+   * @param {string} apiEndpoint endpoint para obtenção de dados
+   * @param {string} tableBodyId id do corpo da tabela
+   * @param {string} tableHeadId id fdo cabeçalho da tabela
+   * @param {string} sortBtnsClass clsse dos botões de ordenação
+   * @memberof TableManager
+   */
   constructor(apiEndpoint, tableBodyId, tableHeadId, sortBtnsClass) {
     this.apiEndpoint = apiEndpoint;
     this.tbody = document.getElementById(tableBodyId);
@@ -19,23 +31,28 @@ class TableManager {
     this.table = [];
   }
 
-  // Cria dinamicamente o cabeçalho da tabela
+  /**
+   * Cria dinamicamente o cabeçalho da tabela
+   *
+   * @memberof TableManager
+   */
   createHead() {
     const headers = [
       { label: "Colocação", key: "colocacao", ord: 'asc' },
       { label: "Time", key: "time", ord: 'asc' },
       { label: "Pontos", key: "pontos", ord: 'desc' },
-      { label: "Vitórias (V)", key: "v", ord: 'desc' },
+      { label: "Vitórias", key: "v", ord: 'desc' },
       { label: "Saldo de Gols", key: "saldo", ord: 'desc' },
-      { label: "Gols Pró (GP)", key: "gp", ord: 'desc' },
-      { label: "Gols Contra (GC)", key: "gc", ord: 'asc' },
-      { label: "Empates (E)", key: "e", ord: 'asc' },
-      { label: "Derrotas (D)", key: "d", ord: 'asc' },
+      { label: "Gols Pró", key: "gp", ord: 'desc' },
+      { label: "Gols Contra", key: "gc", ord: 'asc' },
+      { label: "Empates", key: "e", ord: 'asc' },
+      { label: "Derrotas", key: "d", ord: 'asc' },
       { label: "Jogos", key: "jogos", ord: 'asc' },
-      { label: "Aproveitamento (%)", key: "aproveitamento", ord: 'desc' },
+      { label: "Aproveitamento", key: "aproveitamento", ord: 'desc' },
     ];
 
     const row = document.createElement('tr');
+    row.classList.add('fade-in')
     headers.forEach(header => {
       const th = document.createElement('th');
       th.innerHTML = `
@@ -49,10 +66,17 @@ class TableManager {
     this.thead.appendChild(row);
   }
 
-  // Cria dinamicamente as linhas do corpo da tabela
+  /**
+   * Cria dinamicamente as linhas do corpo da tabela
+   *
+   * @param {string} info informações sobre o time
+   * @param {string} _class classe css adicional
+   * @return {void} 
+   * @memberof TableManager
+   */
   createRow(info, _class) {
     return `
-      <tr class="${_class}">
+      <tr class="${_class} reveal fade-in">
         <td>${info.colocacao}</td> 
         <td>${info.time}</td>
         <td>${info.pontos}</td>
@@ -66,18 +90,27 @@ class TableManager {
         <td>${(info.aproveitamento * 100).toFixed(2)}%</td>
       </tr>`;
   }
-
+  /**
+   * renderiza o corpo da tabela
+   *
+   * @memberof TableManager
+   */
   renderTable() {
     this.tbody.innerHTML = ""; // Limpa o corpo da tabela
     this.table.forEach(info => {
-      const row = info.colocacao <= 6 ? this.createRow(info, 'liberta')
-        : info.colocacao <= 12 ? this.createRow(info, 'sula')
-          : info.colocacao >= 18 ? this.createRow(info, 'degola')
-            : this.createRow(info, '');
+      const row = info.colocacao <= 4 ? this.createRow(info, 'liberta')
+        : info.colocacao <= 6 ? this.createRow(info, 'pre-liberta')
+          : info.colocacao <= 12 ? this.createRow(info, 'sula')
+            : info.colocacao >= 17 ? this.createRow(info, 'degola')
+              : this.createRow(info, '');
       this.tbody.innerHTML += row;
     });
   }
-
+  /**
+   * Calcula as colunas pontos, jogos, saldo, aproveitamento
+   *
+   * @memberof TableManager
+   */
   calculateCols() {
     this.table.forEach(item => {
       item['pontos'] = item['v'] * 3 + item['e'];
@@ -87,7 +120,11 @@ class TableManager {
     });
     this.sortTable();
   }
-
+  /**
+   * executa a classificação dos times por pontos, vitorias, saldo e gols pró
+   *
+   * @memberof TableManager
+   */
   sortTable() {
     this.table.sort((a, b) =>
       b.pontos - a.pontos || // desc
@@ -102,7 +139,13 @@ class TableManager {
 
     this.renderTable();
   }
-
+  /**
+   * Reordena a tabela de acordo com uma coluna (key) e um modo (asc | desc)
+   *
+   * @param {string} key chave pela qual se deve ordenar
+   * @param {string} ord ordenação: ascendente ou descendente
+   * @memberof TableManager
+   */
   sortByKeys(key, ord) {
     this.table.sort((a, b) => {
       if (ord === 'asc') {
@@ -119,7 +162,11 @@ class TableManager {
     this.renderTable();
   }
 
-
+  /**
+   * Adiciona ouvintes aos botões de ordenação
+   *
+   * @memberof TableManager
+   */
   addListeners() {
     const sortBtns = document.querySelectorAll(`.${this.sortBtnsClass}`);
     sortBtns.forEach(btn => {
@@ -140,7 +187,11 @@ class TableManager {
     });
   }
 
-
+  /**
+   * Busca dados junto ao script server side
+   *
+   * @memberof TableManager
+   */
   async fetchTable() {
     try {
       const response = await fetch(this.apiEndpoint);
@@ -155,7 +206,11 @@ class TableManager {
       this.tbody.innerHTML = "<p>Erro ao buscar dados. Tente novamente mais tarde.</p>";
     }
   }
-
+  /**
+   * inicializa o pipelide de construção da tabela
+   *
+   * @memberof TableManager
+   */
   async init() {
     this.createHead();
     await this.fetchTable();

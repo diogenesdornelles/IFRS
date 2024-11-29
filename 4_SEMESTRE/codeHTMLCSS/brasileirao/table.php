@@ -4,15 +4,15 @@
 // A resposta terá a seguinte estrutura:
 // [{time: '', v: 0, e:0, d: 0, gp: 0, gc: 0}]. Deve ter pelo menos 10 times na resposta.
 
-function weighted_random(array $choices, array $weights)
+function randomizacao_ponderada(array $amostra, array $pesos)
 {
-  $totalWeight = array_sum($weights);
-  $rand = mt_rand(1, $totalWeight);
+  $totalPesos = array_sum($pesos); // soma dos pesos
+  $rand = mt_rand(1, $totalPesos); // numero aleatorio entre 1 e soma
 
-  foreach ($choices as $index => $choice) {
-    $rand -= $weights[$index];
+  foreach ($amostra as $index => $opcao) {
+    $rand -= $pesos[$index]; // se o peso for maior que numero aleatorio, retorna opção
     if ($rand <= 0) {
-      return $choice;
+      return $opcao;
     }
   }
   return null;
@@ -20,28 +20,35 @@ function weighted_random(array $choices, array $weights)
 
 
 $tabela = [
-  ["time" => "Grêmio", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Internacional", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Botafogo", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Palmeiras", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Goiás", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "São Paulo", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Flamengo", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Santos", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Cruzeiro", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Atlético Paranaense", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Atlético Mineiro", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Bahia", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Fortaleza", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Juventude", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Corinthians", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Vasco da Gama", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Cuiabá", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Coritiba", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Red Bull Bragantino", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "América Mineiro", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0],
-  ["time" => "Fluminense", "v" => 0, "e" => 0, "d" => 0, "gp" => 0, "gc" => 0]
+  ["time" => "Grêmio"],
+  ["time" => "Internacional"],
+  ["time" => "Botafogo"],
+  ["time" => "Palmeiras"],
+  ["time" => "Goiás"],
+  ["time" => "São Paulo"],
+  ["time" => "Flamengo"],
+  ["time" => "Santos"],
+  ["time" => "Cruzeiro"],
+  ["time" => "Atlético Paranaense"],
+  ["time" => "Atlético Mineiro"],
+  ["time" => "Bahia"],
+  ["time" => "Fortaleza"],
+  ["time" => "Juventude"],
+  ["time" => "Corinthians"],
+  ["time" => "Vasco da Gama"],
+  ["time" => "Cuiabá"],
+  ["time" => "Red Bull Bragantino"],
+  ["time" => "América Mineiro"],
+  ["time" => "Fluminense"]
 ];
+
+for ($i = 0; $i < count($tabela); $i++) {
+  $tabela[$i]['v'] = 0;
+  $tabela[$i]['e'] = 0;
+  $tabela[$i]['d'] = 0;
+  $tabela[$i]['gp'] = 0;
+  $tabela[$i]['gc'] = 0;
+}
 
 $resultados = ["v", "e", "d"];
 
@@ -53,7 +60,7 @@ for ($i = 0; $i < count($tabela); $i++) {
     if ($i !== $j) {
       // seleciona um resultado aleatório para cada partida, tomando a condição de mandante, dentre 'v' (vitória), 'e' (empate) e 'd' (derrota)
       // há uma probabilidade de 50% do mandante ganhar, 30% de empatar e 20% de perder
-      $resultado = $resultados[weighted_random([0, 1, 2], [50, 30, 20])];
+      $resultado = $resultados[randomizacao_ponderada([0, 1, 2], [50, 30, 20])];
 
       $golsVisitante = rand(0, 3);
 

@@ -4,4 +4,4 @@ __pychache__
 .idea
 **/*.env
 .env
-/4_SEMESTRE/codeNODE/appLivros/backend/.env
+./4_SEMESTRE/codeNODE/appLivros/backend/.env
