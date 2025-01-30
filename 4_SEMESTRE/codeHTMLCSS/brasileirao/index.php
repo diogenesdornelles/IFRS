@@ -3,6 +3,12 @@
 <?php require_once('head.php')?>
 <body class="hind-madurai-semibold">
   <h1 class="display-1 title">Brasileirão Série A</h1>
+  <ul class="legenda__ul">
+    <li><p>Libertadores </p> <i class="bi bi-circle-fill liberta-lg"></i></li>
+    <li><p>Pré-libertadores </p> <i class="bi bi-circle-fill pre-liberta-lg"></i></li>
+    <li><p>Sulamericana </p> <i class="bi bi-circle-fill sula-lg"></i></li>
+    <li><p>Rebaixamento</p> <i class="bi bi-circle-fill degola-lg"></i></li>
+  </ul>
   <table id="table" class="table table-striped shadow table-hover">
     <thead id="table-head">
     </thead>

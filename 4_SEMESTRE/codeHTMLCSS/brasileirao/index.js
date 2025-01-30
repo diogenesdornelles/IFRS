@@ -37,6 +37,9 @@ class TableManager {
    * @memberof TableManager
    */
   createHead() {
+    // label: rótulo da coluna
+    // key: chave para identificar a coluna no momento de ordenação
+    // ord: tipo de ordenação a ser aplicada
     const headers = [
       { label: "Colocação", key: "colocacao", ord: 'asc' },
       { label: "Time", key: "time", ord: 'asc' },
@@ -50,11 +53,14 @@ class TableManager {
       { label: "Jogos", key: "jogos", ord: 'asc' },
       { label: "Aproveitamento", key: "aproveitamento", ord: 'desc' },
     ];
-
+    // tria a linha
     const row = document.createElement('tr');
+    // adiciona classe para o efeito entrance
     row.classList.add('fade-in')
+    // cria células
     headers.forEach(header => {
       const th = document.createElement('th');
+      // adiciona rótulos e botões com metadados data-
       th.innerHTML = `
         <span>${header.label}</span>
         <i class="${this.sortBtnsClass} ${header.ord === 'desc' ? 'bi-caret-up-fill' : ``}" data-key="${header.key}" data-ord=${header.ord}></i>
@@ -67,10 +73,10 @@ class TableManager {
   }
 
   /**
-   * Cria dinamicamente as linhas do corpo da tabela
+   * Cria dinamicamente as linhas do corpo da tabela no formato string
    *
    * @param {string} info informações sobre o time
-   * @param {string} _class classe css adicional
+   * @param {string} _class classe css adicional para estilizar a linha
    * @return {void} 
    * @memberof TableManager
    */
@@ -97,7 +103,9 @@ class TableManager {
    */
   renderTable() {
     this.tbody.innerHTML = ""; // Limpa o corpo da tabela
+    // renderiza cada linha com base das informações em tabela
     this.table.forEach(info => {
+      // aciona fn criação de linhas com base na posição do time
       const row = info.colocacao <= 4 ? this.createRow(info, 'liberta')
         : info.colocacao <= 6 ? this.createRow(info, 'pre-liberta')
           : info.colocacao <= 12 ? this.createRow(info, 'sula')
@@ -112,6 +120,7 @@ class TableManager {
    * @memberof TableManager
    */
   calculateCols() {
+    // adiciona novas colunas ao dataset tabela
     this.table.forEach(item => {
       item['pontos'] = item['v'] * 3 + item['e'];
       item['jogos'] = item['v'] + item['e'] + item['d'];
@@ -126,17 +135,18 @@ class TableManager {
    * @memberof TableManager
    */
   sortTable() {
+    // aplica ordenação. Se a subtração resultar zero, passa ao próximo critério
     this.table.sort((a, b) =>
       b.pontos - a.pontos || // desc
       b.v - a.v ||  // desc
       b.saldo - a.saldo || // desc
       b.gp - a.gp // desc
     );
-
+    // após ordenação, gera a coluna colocação
     this.table.forEach((item, i) => {
       item['colocacao'] = i + 1;
     });
-
+    // renderiza a tabela
     this.renderTable();
   }
   /**
@@ -212,8 +222,11 @@ class TableManager {
    * @memberof TableManager
    */
   async init() {
+    // cria o cabeçalho da tebela
     this.createHead();
+    // busca dados para construir o corpo
     await this.fetchTable();
+    // adiciona ouvintes aos botões de ordenação
     this.addListeners();
   }
 }

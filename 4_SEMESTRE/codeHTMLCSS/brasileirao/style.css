@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #ececec91;
 }
 
 .hind-madurai-semibold {
@@ -122,4 +123,51 @@ tbody tr:hover {
   min-width: 400px !important;
   background-color: #ECECEC !important;
   padding: 20px !important;
+}
+
+.legenda__ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.legenda__ul li {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.legenda__ul li p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  height: 16px;
+}
+
+.legenda__ul li i {
+  cursor:default;
+}
+
+.liberta-lg:before {
+  color: green !important;
+  border-radius: 100%;
+}
+
+.pre-liberta-lg:before {
+  color: rgb(192, 148, 3) !important;
+  border-radius: 100%;
+}
+
+.sula-lg:before {
+  color: rgb(0, 127, 247) !important;
+  border-radius: 100%;
+}
+
+.degola-lg:before {
+  color: rgb(247, 0, 0) !important;
+  border-radius: 100%;
 }
