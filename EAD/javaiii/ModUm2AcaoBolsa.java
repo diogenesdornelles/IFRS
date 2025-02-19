@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ModuloUm2AcaoBolsa {
+public class ModUm2AcaoBolsa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         char acao = '0';

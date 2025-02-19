@@ -69,7 +69,7 @@ class Empresa {
 }
 
 
-public class GeradorFolha {
+public class ModUm4GeradorFolha {
     public Empresa empresa = new Empresa();
 
     public void salariosLiquidos() {
@@ -122,7 +122,7 @@ public class GeradorFolha {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String input;
-        GeradorFolha geradorFolha = new GeradorFolha(); 
+        ModUm4GeradorFolha geradorFolha = new ModUm4GeradorFolha(); 
         double salario;
         while (true) {
             System.out.println("Informe o salário do empregado (...xxx.xx): ");
