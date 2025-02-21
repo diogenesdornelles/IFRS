@@ -62,7 +62,7 @@ int main()
     printf("Alguma coisa: %p\n", &ptr);
 
     // Declarar uma string como um array de caracteres em vez de um ponteiro
-    char str[] = "ola mundo";
+    char str[9] = "ola mundo";
     // Diferentemente de outras linguagens, a string é mutable se não declarar como const
     str[0] = 'O';  // agora a string passa a ser "Ola mundo"
     // Acessando o primeiro caractere (mesmo que o array não seja uma variável ponteiro)
@@ -74,11 +74,13 @@ int main()
     // func lib string.h para averiguar o tamanho da string
     printf("Tamanho da string: %lu\n", strlen(str)); // Imprime 9
     // copiando uma string para outro local
-    char str2[9];
+    char str2[10];
     strcpy(str2, str);
+
+    printf("String copiada: %s", str2);
     // concatenar strings
     char s1[4] = "ola ";
-    char s2[5] = " mundo";
+    char s2[6] = " mundo";
     strcat(s1, s2);
     return 0;
 };
