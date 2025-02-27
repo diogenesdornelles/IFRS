@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Clone</title>
+</head>
+
+<body>
+    <!-- container global -->
+    <div class="container mt-5" style="max-width: 1000px;">
+        <!-- titulo -->
+        <h1 class="ps-3 text-body">
+            Exercício com Bootstrap
+        </h1>
+        <!-- container inferior que engloba as duas colunas -->
+        <div class="container m-0 text-center">
+            <!-- uma linha para inserir as duas colunas principais -->
+            <div class="row gy-3">
+                <!-- coluna em que há instruções -->
+                <div
+                    class="col col-12 col-sm-5 col-md-4 col-lg-3 bg-body-tertiary border border-1 border-light-subtle rounded-0">
+                    <div class="container-md m-0 text-center ps-2 pt-4">
+                        <div class="row">
+                            <p class="text-start text-body">
+                                Preencha o formulário ao lado com suas informações.
+                            </p>
+                            <p class="text-start text-body">
+                                Seus dados não serão compartilhados com terceiros.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- coluna em que há o form -->
+                <div class="col col-12 col-sm-7 col-md-8 col-lg-9">
+                    <!-- container para conter os inputs de nome de sobrenome -->
+                    <div class="container-md m-0 text-start">
+                        <!-- uma linha para ambos inputs -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label text-body">Nome</label>
+                                    <input type="text" class="form-control" id="inputNome" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="sobrenomeInput" class="form-label text-body">Sobrenome</label>
+                                    <input type="text" class="form-control" id="sobrenomeInput" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- uma linha para input usuário -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="usuarioInput" class="form-label text-body">Usuário</label>
+                                    <input type="text" class="form-control" id="usuarioInput"
+                                        placeholder="Digite seu usuário">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- uma linha para input senha -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="senhaInput" class="form-label text-body">Senha</label>
+                                    <input type="password" class="form-control" id="senhaInput"
+                                        placeholder="Digite sua senha">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- uma linha para button -->
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 p-2 fs-4" type="submit">Cadastrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,5 +1,3 @@
-package diogenesdornelles;
-
 import java.util.Scanner;
 
 class ScannerClass {

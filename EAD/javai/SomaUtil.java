@@ -1,5 +1,3 @@
-package diogenesdornelles;
-
 // Classes de Utilitários
 // Classes que fornecem métodos auxiliares também não precisam de main.
 
