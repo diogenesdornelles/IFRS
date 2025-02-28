@@ -3,7 +3,6 @@ import { useState } from 'react'
 import TabelaCarros from './tabelaCarros'
 import PesquisaPorMarca from './pesquisaPorMarca'
 
-
 function App(): JSX.Element {
   const [marca, setMarca] = useState("")
 

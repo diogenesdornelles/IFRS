@@ -1,5 +1,4 @@
 import './App.css'
-import Clock from "./comHookStateEffect";
 import ComHookStateEffect from './comHookStateEffect';
 
 

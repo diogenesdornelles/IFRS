@@ -18,14 +18,30 @@ color: darkblue;
 font-size: 24px;
 `;
 
-const Container2 = styled.div`
-background-color: ${(props) => props.theme.background};
-color: ${(props) => props.theme.color};
-height: 100vh;
-width: 100vw;
-display: flex;
-align-items: center;
-justify-content: center;
+interface Container2Props {
+  theme: {
+    background: string,
+    color: string
+  }
+}
+
+interface Theme {
+  background: string;
+  color: string;
+}
+
+interface Container2Props {
+  theme: Theme;
+}
+
+const Container2 = styled.div<Container2Props>`
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const lightTheme = {

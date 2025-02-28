@@ -1,3 +1,5 @@
+//#TIP# Tipagem de função dispatch em set state
+
 const PesquisaPorMarca = (marca: string, setMarca: React.Dispatch<React.SetStateAction<string>>): JSX.Element => (
     <div>
         <label htmlFor="marca" className="block mb-2 text-sm font-medium text-gray-900">Digite uma marca: </label>
