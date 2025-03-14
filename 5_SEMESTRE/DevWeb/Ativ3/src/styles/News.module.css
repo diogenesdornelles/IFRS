@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    flex: 1 1 0;
+    width: 100%;
+
+
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: white;
+    max-width: 50%;
+    gap: 20px;
+    height: 100%;
+    box-shadow: 2px 2px 6px #b8b8b8;
+
+}
+
+.card {
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+    box-shadow: 2px 2px 6px #bebebe;
+    transition: all .5s ease-out;
+    &:hover {
+        background-color: #f7f7f7;
+    }
+}
+
+.title {
+    color: #0D0D0D
+}
+
+.subtitle {
+    color: #0D0D0D
+}
+
+.text {
+    text-align: start;
+    color: #0D0D0D
+}

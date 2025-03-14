@@ -1,0 +1,25 @@
+/* Estilos para os detalhes do cliente */
+.customer-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+   }
+   .customer-details p {
+    margin: 10px 0;
+   }
+   .customer-details strong {
+    color: #333;
+   }
+   /* Estilos do link voltar */
+   .back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+   }
+   .back-link:hover {
+    text-decoration: underline;
+   }
+   

@@ -11,7 +11,7 @@ export const getAllBooks = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const books = await booksServices.getAllBooks()
     res.status(200).json(books)
@@ -24,7 +24,7 @@ export const getBookById = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const { id } = req.params
     const book = await booksServices.getBookById(id)
@@ -41,7 +41,7 @@ export const createBook = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const book = await booksServices.createBook(req)
     res.status(201).json(book)
@@ -54,7 +54,7 @@ export const updateBook = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const { id } = req.params
     const updatedBook = await booksServices.updateBook(id, req)
@@ -73,7 +73,7 @@ export const deleteBook = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const { id } = req.params
     const success = await booksServices.deleteBook(id)
@@ -92,7 +92,7 @@ export const getPaginatedBooks = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const page = parseInt(req.query.page as string) || 1
     const limit = parseInt(req.query.limit as string) || 10
@@ -107,7 +107,7 @@ export const searchBooks = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const books = await booksServices.searchBooks(req.validatedQuery)
     res.status(200).json(books)
@@ -120,7 +120,7 @@ export const createBookImage = async (
   req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   const { id } = req.params
 
   try {

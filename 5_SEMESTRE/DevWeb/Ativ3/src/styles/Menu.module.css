@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+}
+
+.item {
+    padding: 20px;
+}
+
+.link {
+    color: white;
+    font-size: 24px;
+    transition: all 1s ease-out;
+    &:hover {
+        border-bottom: 1px solid white;
+    }
+}
+

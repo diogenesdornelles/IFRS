@@ -18,7 +18,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     isLoggedIn: false,
   });
 
-  // Função de login
+  // Função cb de login, passado junto ao contexto
   const login = (name: string, password: string): void => {
     setAuthState({
       name,
@@ -27,7 +27,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     });
   };
 
-  // Função de logout
+  // Função de logout passado junto ao contexto
   const logout = (): void => {
     setAuthState({
       name: "",

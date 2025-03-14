@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a,
+header nav ul li button {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+header nav ul li button:hover,
+header nav ul li a:hover {
+    color: #ffd700;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.login-button {
+    color: white;
+    cursor: pointer;
+}
+
+main {
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
